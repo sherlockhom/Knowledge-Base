@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/vuex@2.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+</head>
+<body>
+	
+	<div id="demo">
+		<p>{{ price }}</p>
+		<!-- <button  v-on:click="change0">改变</button> -->
+	</div>
+	
+	
+<script type="text/javascript">
+	const vm = new Vue({
+	  el: '#demo',
+	  data: {
+	    firstName: 'Foo',
+	    lastName: 'Bar',
+		msg:'数据修改前',
+		// price:'',
+		book:[
+			{name:'book1',price:20},
+			{name:'book2',price:50},
+			{name:'book3',price:40}
+		],
+		test0:2
+	  },
+	 //  watch:{
+		// test0(newValue,oldValue){
+		// 	console.log(newValue)
+		// }  
+	 //  },
+	  computed:{
+		  price:function(){
+			  var total_price = 0;
+			  for(var i = 0;i<this.book.length;i++){
+				  total_price = total_price + this.book[i].price;
+			  }
+			  return total_price;
+		  }
+	  },
+	  // methods:{
+		 //  change0(){
+			//   this.test0+=1;
+			//   console.log("test")
+		 //  }
+	  // }
+	  
+	  // computed: {
+	  //   fullName: {
+	  //       // getter
+	  //       get: function () {
+	  //         return this.firstName + ' ' + this.lastName
+	  //       },
+	  //       // setter
+	  //       set: function (newValue) {
+	  //         var names = newValue.split(' ')
+	  //         this.firstName = names[0]
+	  //         this.lastName = names[names.length - 1]
+	  //       }
+	  //     }
+	  // }
+	})
+	// vm.msg = '数据修改后';
+	// // 1. 使用vm.$nextTick
+	// vm.$nextTick(() => {
+	//   console.log(vm.$el.innerHTML); // 数据修改后
+	// })
+	// // 2. 使用Vue.nextTick
+	// Vue.nextTick(() => {
+	//   console.log(vm.$el.innerHTML); // 数据修改后
+	// })
+	// setTimeout(() => {
+	//     console.log('timeout');
+	//   }, 0)  
+	//   Promise.resolve().then(() => {
+	//     console.log('promise');
+	//   })
+</script>
+
+</body>
+</html>

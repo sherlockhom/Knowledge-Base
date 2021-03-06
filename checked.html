@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+  <span>运动: </span>
+  <input type="checkbox" id="basketBall" value="basketBall" v-model="sports">
+  <label for="basketBall">篮球</label>
+  <input type="checkbox" id="footBall" value="footBall" v-model="sports">
+  <label for="footBall">足球</label>
+  <input type="checkbox" id="tennis" value="tennis" v-model="sports">
+  <label for="tennis">网球</label><br>
+
+  <p>选择结果是 : {{ sports }}</p>
+</div>
+
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      sports: ['footBall']
+    }
+  })
+</script>
+<style type="text/css">
+
+</style>
+</body>
+</html>
