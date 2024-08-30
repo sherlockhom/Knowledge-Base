@@ -1,0 +1,65 @@
+
+/* 1、浮动布局 */
+/* 浮动布局曾经是常用的布局方式，通过 float 属性将元素浮动到左侧或右侧。例如： */
+    .container {
+        width: 100%;
+    }
+
+    .item {
+        float: left;
+        width: 33.33%;
+    }
+
+/* 2、弹性盒子布局 */
+/* 弹性盒子布局是现代布局的一种强大工具，可以轻松地实现一维布局（水平或垂直）。例如： */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .item {
+        flex: 1;
+    }
+/* 
+    display: flex; 将容器设为弹性盒子容器。
+    justify-content 控制主轴上的对齐。
+    align-items 控制交叉轴上的对齐。
+    flex 属性控制弹性子元素的增长和收缩。 
+*/
+
+/* 3. 网格布局 (Grid Layout) */
+/* 网格布局是一种二维布局系统，允许你创建复杂的布局结构。使用 grid 属性定义网格容器及其项目。例如 */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.item {
+    grid-column: span 2;
+}
+/* 
+    display: grid; 将容器设为网格容器。
+    grid-template-columns 定义列的宽度。
+    gap 设置网格项之间的间距。
+    grid-column 控制网格项跨越的列数。 
+*/
+
+/* 4、定位布局 (Positioning Layout) */
+/* 定位布局通过 position 属性来控制元素的位置。常用的值包括 static（默认）、relative、absolute 和 fixed。例如 */
+.container {
+    position: relative;
+}
+
+.item {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* 
+    position: relative; 设置相对定位，相对于其正常位置。
+    position: absolute; 设置绝对定位，相对于最近的定位祖先元素。
+    position: fixed; 设置固定定位，相对于视口。
+*/
